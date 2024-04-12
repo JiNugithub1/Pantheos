@@ -374,9 +374,9 @@ public class Greece : MonoBehaviour
                     up = 0;
                     down = 0;
                     leftup = 0;
-                    rightup = 1;
-                    leftdown = 0;
-                    rightdown = 1;
+                    rightup = 0;
+                    leftdown = 1;
+                    rightdown = 0;
                 }
                 else // 입력이 없으면 이동하지 않음
                     i--; // 주사위 결과를 하나 감소시켜서 다시 이동할 수 있도록 함
@@ -668,7 +668,7 @@ public class Greece : MonoBehaviour
                 yield return null; // 다음 프레임까지 대기
             }
             // 직사각형 오른쪽으로 이동
-            else if (transform.position == new Vector3(-60, 58, transform.position.z) || transform.position == new Vector3(-28, -46, transform.position.z))
+            else if (transform.position == new Vector3(-60, 58, transform.position.z) || transform.position == new Vector3(-60, -46, transform.position.z))
             {
                 transform.Translate(new Vector2(8f, 0f));
                 left = 0;
