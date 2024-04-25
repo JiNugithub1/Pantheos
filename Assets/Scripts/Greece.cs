@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Greece : MonoBehaviour
 {
-    bool isMoving = false; // ¿ÀºêÁ§Æ®°¡ ¿òÁ÷ÀÌ°í ÀÖ´ÂÁö ¿©ºÎ¸¦ ³ªÅ¸³»´Â º¯¼ö
+    bool isMoving = false; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     int left = 0;
     int right = 0;
     int up = 0;
@@ -18,23 +18,23 @@ public class Greece : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !isMoving)
         {
             int diceResult = Random.Range(1, 7);
-            Debug.Log(diceResult + "ÀÌ(°¡) ³ª¿Ô´Ù.");
-            StartCoroutine(MoveDice(diceResult)); // ÁÖ»çÀ§ °á°ú¿¡ µû¶ó ÀÌµ¿ ÄÚ·çÆ¾ ½ÃÀÛ
+            Debug.Log(diceResult + "ï¿½ï¿½(ï¿½ï¿½) ï¿½ï¿½ï¿½Ô´ï¿½.");
+            StartCoroutine(MoveDice(diceResult)); // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½Ú·ï¿½Æ¾ ï¿½ï¿½ï¿½ï¿½
         }
     }
 
     IEnumerator MoveDice(int diceResult)
     {
-        isMoving = true; // ¿òÁ÷ÀÓ ½ÃÀÛ
+        isMoving = true; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         
 
-        // ÁÖ»çÀ§ °á°ú¿¡ µû¶ó ÀÌµ¿
+        // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
         for (int i = 0; i < diceResult; i++)
         {
-            // °¡¿îµ¥ °¥¸²±æ
+            // ï¿½ï¿½ï¿½îµ¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if (transform.position == new Vector3(0, 6, transform.position.z))
             {
-                // °¢°¢ÀÇ ¹æÇâ Å° ÀÔ·Â¿¡ µû¶ó ÀÌµ¿
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å° ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
                 if (Input.GetKeyDown(KeyCode.Keypad7))
                 {
                     transform.Translate(new Vector2(-4f, 4f));
@@ -83,15 +83,15 @@ public class Greece : MonoBehaviour
                     leftdown = 0;
                     rightdown = 1;
                 }
-                else // ÀÔ·ÂÀÌ ¾øÀ¸¸é ÀÌµ¿ÇÏÁö ¾ÊÀ½
-                    i--; // ÁÖ»çÀ§ °á°ú¸¦ ÇÏ³ª °¨¼Ò½ÃÄÑ¼­ ´Ù½Ã ÀÌµ¿ÇÒ ¼ö ÀÖµµ·Ï ÇÔ
+                else // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    i--; // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ù½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¿ÞÂÊ À§ °¥¸²±æ
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             else if (transform.position == new Vector3(-24, 30, transform.position.z)) 
             {
-                // °¢°¢ÀÇ ¹æÇâ Å° ÀÔ·Â¿¡ µû¶ó ÀÌµ¿
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å° ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
                 if (Input.GetKeyDown(KeyCode.Keypad7))
                 {
                     transform.Translate(new Vector2(-4f, 4f));
@@ -140,15 +140,15 @@ public class Greece : MonoBehaviour
                     leftdown = 0;
                     rightdown = 1;
                 }
-                else // ÀÔ·ÂÀÌ ¾øÀ¸¸é ÀÌµ¿ÇÏÁö ¾ÊÀ½
-                    i--; // ÁÖ»çÀ§ °á°ú¸¦ ÇÏ³ª °¨¼Ò½ÃÄÑ¼­ ´Ù½Ã ÀÌµ¿ÇÒ ¼ö ÀÖµµ·Ï ÇÔ
+                else // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    i--; // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ù½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¿À¸¥ÂÊ À§ °¥¸²±æ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             else if (transform.position == new Vector3(24, 30, transform.position.z))
             {
-                // °¢°¢ÀÇ ¹æÇâ Å° ÀÔ·Â¿¡ µû¶ó ÀÌµ¿
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å° ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
                 if (Input.GetKeyDown(KeyCode.Keypad7))
                 {
                     transform.Translate(new Vector2(-4f, 4f));
@@ -197,15 +197,15 @@ public class Greece : MonoBehaviour
                     leftdown = 0;
                     rightdown = 1;
                 }
-                else // ÀÔ·ÂÀÌ ¾øÀ¸¸é ÀÌµ¿ÇÏÁö ¾ÊÀ½
-                    i--; // ÁÖ»çÀ§ °á°ú¸¦ ÇÏ³ª °¨¼Ò½ÃÄÑ¼­ ´Ù½Ã ÀÌµ¿ÇÒ ¼ö ÀÖµµ·Ï ÇÔ
+                else // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    i--; // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ù½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¿ÞÂÊ ¾Æ·¡ °¥¸²±æ
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             else if (transform.position == new Vector3(-24, -18, transform.position.z))
             {
-                // °¢°¢ÀÇ ¹æÇâ Å° ÀÔ·Â¿¡ µû¶ó ÀÌµ¿
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å° ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
                 if (Input.GetKeyDown(KeyCode.Keypad7))
                 {
                     transform.Translate(new Vector2(-4f, 4f));
@@ -254,15 +254,15 @@ public class Greece : MonoBehaviour
                     leftdown = 0;
                     rightdown = 1;
                 }
-                else // ÀÔ·ÂÀÌ ¾øÀ¸¸é ÀÌµ¿ÇÏÁö ¾ÊÀ½
-                    i--; // ÁÖ»çÀ§ °á°ú¸¦ ÇÏ³ª °¨¼Ò½ÃÄÑ¼­ ´Ù½Ã ÀÌµ¿ÇÒ ¼ö ÀÖµµ·Ï ÇÔ
+                else // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    i--; // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ù½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¿À¸¥ÂÊ ¾Æ·¡ °¥¸²±æ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             else if (transform.position == new Vector3(24, -18, transform.position.z))
             {
-                // °¢°¢ÀÇ ¹æÇâ Å° ÀÔ·Â¿¡ µû¶ó ÀÌµ¿
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å° ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
                 if (Input.GetKeyDown(KeyCode.Keypad7))
                 {
                     transform.Translate(new Vector2(-4f, 4f));
@@ -311,16 +311,16 @@ public class Greece : MonoBehaviour
                     leftdown = 0;
                     rightdown = 1;
                 }
-                else // ÀÔ·ÂÀÌ ¾øÀ¸¸é ÀÌµ¿ÇÏÁö ¾ÊÀ½
-                    i--; // ÁÖ»çÀ§ °á°ú¸¦ ÇÏ³ª °¨¼Ò½ÃÄÑ¼­ ´Ù½Ã ÀÌµ¿ÇÒ ¼ö ÀÖµµ·Ï ÇÔ
+                else // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    i--; // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ù½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
 
-            // ¸¶¸§¸ð 12½Ã¿¡¼­ ½ÃÀÛ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 12ï¿½Ã¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             else if (transform.position == new Vector3(0, 54, transform.position.z) && i == 0)
             {
-                // °¢°¢ÀÇ ¹æÇâ Å° ÀÔ·Â¿¡ µû¶ó ÀÌµ¿
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å° ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
                 if (Input.GetKeyDown(KeyCode.Keypad1))
                 {
                     transform.Translate(new Vector2(-4f, -4f));
@@ -345,15 +345,15 @@ public class Greece : MonoBehaviour
                     leftdown = 0;
                     rightdown = 1;
                 }
-                else // ÀÔ·ÂÀÌ ¾øÀ¸¸é ÀÌµ¿ÇÏÁö ¾ÊÀ½
-                    i--; // ÁÖ»çÀ§ °á°ú¸¦ ÇÏ³ª °¨¼Ò½ÃÄÑ¼­ ´Ù½Ã ÀÌµ¿ÇÒ ¼ö ÀÖµµ·Ï ÇÔ
+                else // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    i--; // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ù½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¸¶¸§¸ð 3½Ã¿¡¼­ ½ÃÀÛ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 3ï¿½Ã¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             else if (transform.position == new Vector3(48, 6, transform.position.z) && i == 0)
             {
-                // °¢°¢ÀÇ ¹æÇâ Å° ÀÔ·Â¿¡ µû¶ó ÀÌµ¿
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å° ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
                 if (Input.GetKeyDown(KeyCode.Keypad7))
                 {
                     transform.Translate(new Vector2(-4f, 4f));
@@ -378,15 +378,15 @@ public class Greece : MonoBehaviour
                     leftdown = 1;
                     rightdown = 0;
                 }
-                else // ÀÔ·ÂÀÌ ¾øÀ¸¸é ÀÌµ¿ÇÏÁö ¾ÊÀ½
-                    i--; // ÁÖ»çÀ§ °á°ú¸¦ ÇÏ³ª °¨¼Ò½ÃÄÑ¼­ ´Ù½Ã ÀÌµ¿ÇÒ ¼ö ÀÖµµ·Ï ÇÔ
+                else // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    i--; // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ù½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¸¶¸§¸ð 6½Ã¿¡¼­ ½ÃÀÛ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 6ï¿½Ã¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             else if (transform.position == new Vector3(0, -42, transform.position.z) && i == 0)
             {
-                // °¢°¢ÀÇ ¹æÇâ Å° ÀÔ·Â¿¡ µû¶ó ÀÌµ¿
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å° ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
                 if (Input.GetKeyDown(KeyCode.Keypad7))
                 {
                     transform.Translate(new Vector2(-4f, 4f));
@@ -411,15 +411,15 @@ public class Greece : MonoBehaviour
                     leftdown = 0;
                     rightdown = 0;
                 }
-                else // ÀÔ·ÂÀÌ ¾øÀ¸¸é ÀÌµ¿ÇÏÁö ¾ÊÀ½
-                    i--; // ÁÖ»çÀ§ °á°ú¸¦ ÇÏ³ª °¨¼Ò½ÃÄÑ¼­ ´Ù½Ã ÀÌµ¿ÇÒ ¼ö ÀÖµµ·Ï ÇÔ
+                else // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    i--; // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ù½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¸¶¸§¸ð 9½Ã¿¡¼­ ½ÃÀÛ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 9ï¿½Ã¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             else if (transform.position == new Vector3(-48, 6, transform.position.z) && i == 0)
             {
-                // °¢°¢ÀÇ ¹æÇâ Å° ÀÔ·Â¿¡ µû¶ó ÀÌµ¿
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å° ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
                 if (Input.GetKeyDown(KeyCode.Keypad9))
                 {
                     transform.Translate(new Vector2(4f, 4f));
@@ -444,13 +444,13 @@ public class Greece : MonoBehaviour
                     leftdown = 0;
                     rightdown = 1;
                 }
-                else // ÀÔ·ÂÀÌ ¾øÀ¸¸é ÀÌµ¿ÇÏÁö ¾ÊÀ½
-                    i--; // ÁÖ»çÀ§ °á°ú¸¦ ÇÏ³ª °¨¼Ò½ÃÄÑ¼­ ´Ù½Ã ÀÌµ¿ÇÒ ¼ö ÀÖµµ·Ï ÇÔ
+                else // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    i--; // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ù½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
 
-            // ¸¶¸§¸ð 12½Ã Áö³ª°¨
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 12ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             else if (transform.position == new Vector3(0, 54, transform.position.z) && i != 0)
             {
                 if (leftup == 1)
@@ -465,9 +465,9 @@ public class Greece : MonoBehaviour
                     rightdown = 1;
                     transform.Translate(new Vector2(4f, -4f));
                 }
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¸¶¸§¸ð 3½Ã Áö³ª°¨
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             else if (transform.position == new Vector3(48, 6, transform.position.z) && i != 0)
             {
                 if (rightdown == 1)
@@ -482,9 +482,9 @@ public class Greece : MonoBehaviour
                     leftup = 1;
                     transform.Translate(new Vector2(-4f, 4f));
                 }
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¸¶¸§¸ð 6½Ã Áö³ª°¨
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 6ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             else if (transform.position == new Vector3(0, -42, transform.position.z) && i != 0)
             {
                 if (leftdown == 1)
@@ -499,9 +499,9 @@ public class Greece : MonoBehaviour
                     rightup = 1;
                     transform.Translate(new Vector2(4f, 4f));
                 }
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¸¶¸§¸ð 9½Ã Áö³ª°¨
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 9ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             else if (transform.position == new Vector3(-48, 6, transform.position.z) && i != 0)
             {
                 if (leftup == 1)
@@ -516,13 +516,13 @@ public class Greece : MonoBehaviour
                     rightdown = 1;
                     transform.Translate(new Vector2(4f, -4f));
                 }
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
 
-            // ¼³»ê ÀÔ±¸
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½Ô±ï¿½
             else if (transform.position == new Vector3(-28, 34, transform.position.z))
             {
-                // °¢°¢ÀÇ ¹æÇâ Å° ÀÔ·Â¿¡ µû¶ó ÀÌµ¿
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å° ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
                 if (Input.GetKeyDown(KeyCode.Keypad4))
                 {
                     transform.Translate(new Vector2(-8f, 0f));
@@ -547,15 +547,15 @@ public class Greece : MonoBehaviour
                     leftdown = 0;
                     rightdown = 1;
                 }
-                else // ÀÔ·ÂÀÌ ¾øÀ¸¸é ÀÌµ¿ÇÏÁö ¾ÊÀ½
-                    i--; // ÁÖ»çÀ§ °á°ú¸¦ ÇÏ³ª °¨¼Ò½ÃÄÑ¼­ ´Ù½Ã ÀÌµ¿ÇÒ ¼ö ÀÖµµ·Ï ÇÔ
+                else // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    i--; // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ù½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // »ê¾Ç ÀÔ±¸
+            // ï¿½ï¿½ï¿½ ï¿½Ô±ï¿½
             else if (transform.position == new Vector3(28, 34, transform.position.z))
             {
-                // °¢°¢ÀÇ ¹æÇâ Å° ÀÔ·Â¿¡ µû¶ó ÀÌµ¿
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å° ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
                 if (Input.GetKeyDown(KeyCode.Keypad6))
                 {
                     transform.Translate(new Vector2(8f, 0f));
@@ -580,15 +580,15 @@ public class Greece : MonoBehaviour
                     leftdown = 0;
                     rightdown = 1;
                 }
-                else // ÀÔ·ÂÀÌ ¾øÀ¸¸é ÀÌµ¿ÇÏÁö ¾ÊÀ½
-                    i--; // ÁÖ»çÀ§ °á°ú¸¦ ÇÏ³ª °¨¼Ò½ÃÄÑ¼­ ´Ù½Ã ÀÌµ¿ÇÒ ¼ö ÀÖµµ·Ï ÇÔ
+                else // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    i--; // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ù½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // »ç¸· ÀÔ±¸
+            // ï¿½ç¸· ï¿½Ô±ï¿½
             else if (transform.position == new Vector3(28, -22, transform.position.z))
             {
-                // °¢°¢ÀÇ ¹æÇâ Å° ÀÔ·Â¿¡ µû¶ó ÀÌµ¿
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å° ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
                 if (Input.GetKeyDown(KeyCode.Keypad6))
                 {
                     transform.Translate(new Vector2(8f, 0f));
@@ -613,15 +613,15 @@ public class Greece : MonoBehaviour
                     leftdown = 0;
                     rightdown = 0;
                 }
-                else // ÀÔ·ÂÀÌ ¾øÀ¸¸é ÀÌµ¿ÇÏÁö ¾ÊÀ½
-                    i--; // ÁÖ»çÀ§ °á°ú¸¦ ÇÏ³ª °¨¼Ò½ÃÄÑ¼­ ´Ù½Ã ÀÌµ¿ÇÒ ¼ö ÀÖµµ·Ï ÇÔ
+                else // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    i--; // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ù½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // Á¤±Û ÀÔ±¸
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½Ô±ï¿½
             else if (transform.position == new Vector3(-28, -22, transform.position.z))
             {
-                // °¢°¢ÀÇ ¹æÇâ Å° ÀÔ·Â¿¡ µû¶ó ÀÌµ¿
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å° ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
                 if (Input.GetKeyDown(KeyCode.Keypad4))
                 {
                     transform.Translate(new Vector2(-8f, 0f));
@@ -646,13 +646,13 @@ public class Greece : MonoBehaviour
                     leftdown = 0;
                     rightdown = 0;
                 }
-                else // ÀÔ·ÂÀÌ ¾øÀ¸¸é ÀÌµ¿ÇÏÁö ¾ÊÀ½
-                    i--; // ÁÖ»çÀ§ °á°ú¸¦ ÇÏ³ª °¨¼Ò½ÃÄÑ¼­ ´Ù½Ã ÀÌµ¿ÇÒ ¼ö ÀÖµµ·Ï ÇÔ
+                else // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    i--; // ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ù½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
 
-            // Á÷»ç°¢Çü À§·Î ÀÌµ¿
+            // ï¿½ï¿½ï¿½ç°¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
             else if (transform.position == new Vector3(-60, 34, transform.position.z) || transform.position == new Vector3(60, 34, transform.position.z) || transform.position == new Vector3(28, -46, transform.position.z) || transform.position == new Vector3(-28, -46, transform.position.z))
             {
                 transform.Translate(new Vector2(0f, 8f));
@@ -665,9 +665,9 @@ public class Greece : MonoBehaviour
                 leftdown = 0;
                 rightdown = 0;
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // Á÷»ç°¢Çü ¿À¸¥ÂÊÀ¸·Î ÀÌµ¿
+            // ï¿½ï¿½ï¿½ç°¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
             else if (transform.position == new Vector3(-60, 58, transform.position.z) || transform.position == new Vector3(-60, -46, transform.position.z))
             {
                 transform.Translate(new Vector2(8f, 0f));
@@ -680,9 +680,9 @@ public class Greece : MonoBehaviour
                 leftdown = 0;
                 rightdown = 0;
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // Á÷»ç°¢Çü ¿ÞÂÊÀ¸·Î ÀÌµ¿
+            // ï¿½ï¿½ï¿½ç°¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
             else if (transform.position == new Vector3(60, 58, transform.position.z) || transform.position == new Vector3(60, -46, transform.position.z))
             {
                 transform.Translate(new Vector2(-8f, 0f));
@@ -695,9 +695,9 @@ public class Greece : MonoBehaviour
                 leftdown = 0;
                 rightdown = 0;
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // Á÷»ç°¢Çü ¾Æ·¡·Î ÀÌµ¿
+            // ï¿½ï¿½ï¿½ç°¢ï¿½ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
             else if (transform.position == new Vector3(-28, 58, transform.position.z) || transform.position == new Vector3(28, 58, transform.position.z) || transform.position == new Vector3(60, -22, transform.position.z) || transform.position == new Vector3(-60, -22, transform.position.z))
             {
                 transform.Translate(new Vector2(0f, -8f));
@@ -710,59 +710,59 @@ public class Greece : MonoBehaviour
                 leftdown = 0;
                 rightdown = 0;
 
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
 
-            // ¿ÞÂÊ À§ ÀÌµ¿
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ìµï¿½
             else if (leftup == 1)
             {
                 transform.Translate(new Vector2(-4f, 4f));
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¿À¸¥ÂÊ À§ ÀÌµ¿
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ìµï¿½
             else if (rightup == 1)
             {
                 transform.Translate(new Vector2(4f, 4f));
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¿ÞÂÊ ¾Æ·¡ ÀÌµ¿
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ ï¿½Ìµï¿½
             else if (leftdown == 1)
             {
                 transform.Translate(new Vector2(-4f, -4f));
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¿À¸¥ÂÊ ¾Æ·¡ ÀÌµ¿
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ ï¿½Ìµï¿½
             else if (rightdown == 1)
             {
                 transform.Translate(new Vector2(4f, -4f));
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¿ÞÂÊ ÀÌµ¿
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
             else if (left == 1)
             {
                 transform.Translate(new Vector2(-8f, 0f));
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¿À¸¥ÂÊ ÀÌµ¿
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
             else if (right == 1)
             {
                 transform.Translate(new Vector2(8f, 0f));
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // À§ÂÊ ÀÌµ¿
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
             else if (up == 1)
             {
                 transform.Translate(new Vector2(0f, 8f));
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
-            // ¾Æ·¡ÂÊ ÀÌµ¿
+            // ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
             else if (down == 1)
             {
                 transform.Translate(new Vector2(0f, -8f));
-                yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+                yield return null; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             }
         }
 
-        isMoving = false; // ¿òÁ÷ÀÓ Á¾·á
+        isMoving = false; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 }
